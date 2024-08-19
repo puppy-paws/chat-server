@@ -27,7 +27,7 @@ export class ChatService {
             where: {
                 communityId,
                 chatRoomMembers: {
-                    user_id: receiver
+                    user_id: sender
                 }
             },
             relations: ["chatRoomMembers"]
@@ -35,7 +35,7 @@ export class ChatService {
 
         // if chatroom exists do not create chatroom
         if (findChatRoom != null) {
-            return 0;
+            return findChatRoom.id;
         }
 
         const qr = this.dataSource.createQueryRunner();
@@ -44,13 +44,15 @@ export class ChatService {
 
         try {
             // chatroom create
-            const chatRoom = this.chatRoomRepository.create();
+            const chatRoom = this.chatRoomRepository.create({
+                communityId
+            });
             const newChatRoom = await this.chatRoomRepository.save(chatRoom);
 
             // chatroom member Info
             const senderInfo = this.chatRoomMemberRepository.create({
                 user_id: sender,
-                chatRoom: newChatRoom
+                chatRoom: newChatRoom,
             });
 
             const receiverInfo = this.chatRoomMemberRepository.create({
