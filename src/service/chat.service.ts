@@ -66,6 +66,7 @@ export class ChatService {
             await qr.commitTransaction();
             return newChatRoom.id;
         } catch (e) {
+            console.log(e)
             await qr.rollbackTransaction();
         } finally {
             await qr.release();
@@ -192,7 +193,6 @@ export class ChatService {
             };
         }));
 
-        console.log(`test: `, newChatList);
         return newChatList;
     }
 
