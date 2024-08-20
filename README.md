@@ -30,11 +30,11 @@
 ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 ## 전체 구성도
-![image](https://github.com/user-attachments/assets/53d1023a-dbf4-439c-8e13-8b62f7f4abdc)
+![인프라](https://github.com/user-attachments/assets/dcda51c7-2d7f-4d97-83cc-c58af091d8cd)
 
 
 ## ERD
-![image](https://github.com/user-attachments/assets/83ea65a5-5767-43fa-b037-c9f4546f3df5)
+![erd](https://github.com/user-attachments/assets/98fa64e3-89fa-4289-9a0a-48b709c1b04a)
 
 
 ## 설치 및 실행방법
